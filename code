@@ -1,0 +1,13 @@
+    vector<int>dx={-1,0,1,0};
+    vector<int>dy={0,1,0,-1};
+    void dfs(vector<vector<char>>& grid,int i,int j,int n,int m){
+        if(i<0 || i>=n || j<0 || j>=m)  return;
+        grid[i][j]='$';
+        for(int k=0;k<4;k++){
+            int x=i+dx[k];
+            int y=j+dy[k];
+            if(x>=0 and x<n and y>=0 and y<m and grid[x][y]=='1'){
+                dfs(grid,x,y,n,m);
+            }
+        }
+    }
